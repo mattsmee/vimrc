@@ -1,47 +1,42 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype off
 
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'flazz/vim-colorschemes'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'godlygeek/tabular'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'ervandew/supertab'
-Plugin 'mileszs/ack.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
+Plug 'chriskempson/base16-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/vim-easy-align'
+Plug 'godlygeek/tabular'
+Plug 'jiangmiao/auto-pairs'
+Plug 'haya14busa/incsearch.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+Plug 'mileszs/ack.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/syntastic'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'pangloss/vim-javascript'
+Plug 'kchmck/vim-coffee-script'
+Plug 'moll/vim-node', { 'for': ['javascript', 'coffee'] }
+Plug 'scrooloose/nerdtree'
 
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-
-" Put your non-Plugin stuff after this line
+call plug#end()
 
 
 syntax on
-colorscheme twilight
+syntax enable
+colorscheme base16-default-dark
 filetype plugin on
+filetype plugin indent on
 filetype indent on
 highlight ColorColumn ctermbg=7
 highlight ColorColumn guibg=gray
 set guifont=Menlo\ Regular:h12
+set background=dark
 set colorcolumn=80
 set number
 set history=500
@@ -54,7 +49,7 @@ set magic
 set showmatch
 set splitbelow
 set cursorline
-
+set termguicolors
 
 " Files, backups
 set hidden
@@ -82,12 +77,31 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 
+" The Silver Searcher (Ag)
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+
 " Git Gutter
 let g:gitgutter_sign_column_always=1
 
 
-" Shortcuts
-nmap <leader>s :w!<cr>
+" Leader / Shortcuts
+let mapleader = "\<Space>"
+nmap <leader>w :w!<cr>
+map <leader><leader> :NERDTreeToggle<cr>
+map <leader>. :NERDTreeFind<cr>
+
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
@@ -117,4 +131,11 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " Ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+
+" Vim Easy Align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
