@@ -47,9 +47,11 @@ set autoread
 set lazyredraw
 set magic
 set showmatch
+set splitright
 set splitbelow
 set cursorline
 set termguicolors
+set backspace=indent,eol,start
 
 " Files, backups
 set hidden
