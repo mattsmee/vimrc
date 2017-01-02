@@ -52,6 +52,7 @@ set splitbelow
 set cursorline
 set termguicolors
 set backspace=indent,eol,start
+set relativenumber
 
 " Files, backups
 set hidden
