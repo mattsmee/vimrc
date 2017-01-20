@@ -21,6 +21,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
 Plug 'moll/vim-node', { 'for': ['javascript', 'coffee'] }
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
 
 
 " All of your Plugins must be added before the following line
@@ -146,8 +148,8 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 " let g:ctrlp_working_path_mode = 'w'
 let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=40
+let g:ctrlp_max_files = 0
+let g:ctrlp_max_depth = 40
 
 
 " Vim Easy Align
@@ -156,3 +158,7 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+
+" NERD Commenter
+let g:NERDSpaceDelims  = 1
+let g:NERDDefaultAlign = 'left'
