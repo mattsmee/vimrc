@@ -23,6 +23,8 @@ Plug 'moll/vim-node', { 'for': ['javascript', 'coffee'] }
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 
 
 " All of your Plugins must be added before the following line
@@ -162,3 +164,9 @@ nmap ga <Plug>(EasyAlign)
 " NERD Commenter
 let g:NERDSpaceDelims  = 1
 let g:NERDDefaultAlign = 'left'
+
+
+" Rust
+" Racer
+let g:racer_cmd = '~/.cargo/bin/racer'
+let g:racer_experimental_completer = 1
