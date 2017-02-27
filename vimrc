@@ -189,6 +189,9 @@ au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
+" Misc Rust Stuff
+let g:rust_recommended_style = 0
+
 
 " YouCompleteMe
 let g:ycm_rust_src_path = '~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
