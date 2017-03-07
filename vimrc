@@ -83,6 +83,14 @@ autocmd BufWritePre * %s/\s\+$//e
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
 
 
 " The Silver Searcher (Ag)
@@ -109,15 +117,15 @@ let mapleader = "\<Space>"
 map <leader><leader> :NERDTreeToggle<cr>
 map <leader>. :NERDTreeFind<cr>
 
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 if exists(':tnoremap')
-  tmap <C-j> <C-\><C-n><C-W>j
-  tmap <C-k> <C-\><C-n><C-W>k
-  tmap <C-h> <C-\><C-n><C-W>h
-  tmap <C-l> <C-\><C-n><C-W>l
+  tnoremap <C-j> <C-\><C-n><C-W>j
+  tnoremap <C-k> <C-\><C-n><C-W>k
+  tnoremap <C-h> <C-\><C-n><C-W>h
+  tnoremap <C-l> <C-\><C-n><C-W>l
 endif
 
 
