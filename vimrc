@@ -25,6 +25,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
+Plug 'pbrisbin/vim-mkdir'
 
 
 " All of your Plugins must be added before the following line
@@ -105,7 +106,6 @@ let g:gitgutter_sign_column_always=1
 
 " Leader / Shortcuts
 let mapleader = "\<Space>"
-nmap <leader>w :w!<cr>
 map <leader><leader> :NERDTreeToggle<cr>
 map <leader>. :NERDTreeFind<cr>
 
@@ -113,6 +113,12 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+if exists(':tnoremap')
+  tmap <C-j> <C-\><C-n><C-W>j
+  tmap <C-k> <C-\><C-n><C-W>k
+  tmap <C-h> <C-\><C-n><C-W>h
+  tmap <C-l> <C-\><C-n><C-W>l
+endif
 
 
 " Sound
@@ -178,3 +184,7 @@ au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 " YouCompleteMe
 let g:ycm_rust_src_path = '~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
+
+
+" NeoVim
+let g:python_host_prog = '/usr/local/bin/python'
