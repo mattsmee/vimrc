@@ -116,7 +116,7 @@ let g:gitgutter_sign_column_always=1
 let mapleader = "\<Space>"
 map <leader><leader> :NERDTreeToggle<cr>
 map <leader>. :NERDTreeFind<cr>
-
+" Move between splits
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
@@ -126,6 +126,10 @@ if exists(':tnoremap')
   tnoremap <C-k> <C-\><C-n><C-W>k
   tnoremap <C-h> <C-\><C-n><C-W>h
   tnoremap <C-l> <C-\><C-n><C-W>l
+endif
+" Open terminal in a horizontal split
+if exists(':terminal')
+  nnoremap <leader>t :sp<cr> :terminal<cr>
 endif
 
 
