@@ -129,7 +129,7 @@ if exists(':tnoremap')
 endif
 " Open terminal in a horizontal split
 if exists(':terminal')
-  nnoremap <leader>t :sp<cr> :terminal<cr>
+  nnoremap <leader>t :sp +terminal<cr>
 endif
 
 
