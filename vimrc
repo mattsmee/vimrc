@@ -26,7 +26,6 @@ Plug 'tpope/vim-surround'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'pbrisbin/vim-mkdir'
-Plug 'dag/vim2hs'
 
 
 " All of your Plugins must be added before the following line
