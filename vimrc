@@ -194,7 +194,7 @@ au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 " Misc Rust Stuff
-let g:rust_recommended_style = 0
+" let g:rust_recommended_style = 0
 
 
 " YouCompleteMe
