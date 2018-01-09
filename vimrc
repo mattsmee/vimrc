@@ -41,7 +41,6 @@ filetype plugin indent on
 filetype indent on
 highlight ColorColumn ctermbg=7
 highlight ColorColumn guibg=gray
-set guifont=Menlo\ Regular:h12
 set background=dark
 set colorcolumn=80
 set number
@@ -59,6 +58,9 @@ set cursorline
 set termguicolors
 set backspace=indent,eol,start
 set relativenumber
+if !has("gui_vimr")
+  set guifont=Menlo\ Regular:h12
+endif
 
 " Files, backups
 set hidden
