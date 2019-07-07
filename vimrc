@@ -27,6 +27,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'fatih/vim-go'
+Plug 'maxmellon/vim-jsx-pretty'
 
 
 " All of your Plugins must be added before the following line
@@ -205,4 +206,7 @@ let g:ycm_rust_src_path = '~/.multirust/toolchains/stable-x86_64-apple-darwin/li
 
 
 " NeoVim
-let g:python_host_prog = '/usr/local/bin/python'
+let g:python_host_prog = '/usr/local/bin/python3'
+
+" vim-javscript
+let g:vim_jsx_pretty_colorful_config = 1 " default 0
