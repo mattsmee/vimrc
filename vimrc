@@ -174,6 +174,8 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_max_files = 0
 let g:ctrlp_max_depth = 40
+nnoremap <leader>p :CtrlPClearCache<cr>
+nnoremap <leader><leader>p :CtrlPClearAllCaches<cr>
 
 
 " Vim Easy Align
@@ -207,6 +209,7 @@ let g:ycm_rust_src_path = '~/.multirust/toolchains/stable-x86_64-apple-darwin/li
 
 " NeoVim
 let g:python_host_prog = '/usr/local/bin/python3'
+
 
 " vim-javscript
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
